@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7fafd;
+    color: #222;
+}
+
+header {
+    background: #153a5b;
+    color: #fff;
+    padding: 0.5rem 0;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 48px;
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.7rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #f7c948;
+}
+
+.container {
+    width: 92%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.hero {
+    background: #eaf3fa;
+    padding: 3rem 0 2rem 0;
+    text-align: center;
+}
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #153a5b;
+}
+.slogan {
+    font-size: 1.3rem;
+    color: #2261a9;
+    margin-top: 0.7rem;
+}
+
+section {
+    padding: 2rem 0 1rem 0;
+}
+
+h2 {
+    color: #153a5b;
+    margin-bottom: 0.7rem;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+.servicios ul, .valores ul {
+    list-style: disc inside;
+}
+
+.clientes-lista {
+    margin-top: 1rem;
+    color: #2261a9;
+    font-weight: 500;
+}
+
+footer {
+    background: #153a5b;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.carrusel-servicios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 2rem 0 1rem 0;
+}
+.carrusel-btn {
+    background: #153a5b;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.carrusel-btn:hover {
+    background: #2261a9;
+}
+.carrusel-slide {
+    min-width: 220px;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(21,58,91,0.08);
+    padding: 1.3rem 1.5rem;
+    text-align: left;
+}
+.servicio-item h3 {
+    color: #153a5b;
+    margin: 0 0 0.4rem 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+.servicio-item p {
+    margin: 0;
+    color: #222;
+    font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+    .header-flex { flex-direction: column; align-items: flex-start; }
+    nav { margin-top: 0.5rem; }
+    .logo { margin-bottom: 0.5rem; }
+    .container { width: 98%; }
+    section { padding: 1.2rem 0 0.7rem 0; }
+    .hero { padding: 2rem 0 1.2rem 0; }
+    .carrusel-slide { max-width: 98vw; min-width: 0; padding: 1rem 0.6rem; }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yajasa Technology</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <img src="assets/yajasa-logo.png" alt="Yajasa Technology Logo" class="logo">
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre">Sobre Nosotros</a>
+                <a href="#valores">Valores</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#clientes">Clientes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Yajasa Technology</h1>
+                <p class="slogan">"TRABAJO EN EQUIPO, SEGURIDAD Y LIDERAZGO"</p>
+            </div>
+        </section>
+        <section id="servicios" class="servicios">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <div class="carrusel-servicios">
+                    <button class="carrusel-btn" id="prev-servicio" aria-label="Anterior">&#8592;</button>
+                    <div class="carrusel-slide" id="servicio-slide">
+                        <!-- Aquí se cargan los servicios vía JS -->
+                    </div>
+                    <button class="carrusel-btn" id="next-servicio" aria-label="Siguiente">&#8594;</button>
+                </div>
+            </div>
+        </section>
+        <script>
+        const servicios = [
+          {
+            titulo: 'EQUIPOS Y MAQUINARIAS',
+            descripcion: 'Arriendo de torre de iluminación, manlift equipo de levante, generadores industriales, Camionetas, minibuses, Camiones, radios portátiles y de base.'
+          },
+          {
+            titulo: 'INGENIERÍA INTEGRAL',
+            descripcion: 'Servicio de telecomunicaciones, sistema de enlace de comunicación, mantenimiento de equipos plotter e impresoras de gran formatos, servicio de mantención de sistema CCTV de radares minas, revisión y chequeo de instrumentación geotecnico, mantención de equipos de monitoreo y cámaras, automatización de venta de cascos inteligentes.'
+          },
+          {
+            titulo: 'SERVICIO DE ASEO INDUSTRIAL',
+            descripcion: 'Servicio de aseo industrial.'
+          },
+          {
+            titulo: 'TRANSPORTE POR CARRETERA',
+            descripcion: 'Servicios de traslado de materiales (Muestras, equipos, maquinarias) dando monitoreo y seguimiento para una mayor seguridad a nuestros clientes.'
+          },
+          {
+            titulo: 'COMERCIALIZADORA',
+            descripcion: 'Servicio de productos varios.'
+          }
+        ];
+        let currentServicio = 0;
+        const slide = document.getElementById('servicio-slide');
+        function renderServicio(idx) {
+          slide.innerHTML = `<div class="servicio-item"><h3>${servicios[idx].titulo}</h3><p>${servicios[idx].descripcion}</p></div>`;
+        }
+        document.getElementById('prev-servicio').onclick = () => {
+          currentServicio = (currentServicio - 1 + servicios.length) % servicios.length;
+          renderServicio(currentServicio);
+        };
+        document.getElementById('next-servicio').onclick = () => {
+          currentServicio = (currentServicio + 1) % servicios.length;
+          renderServicio(currentServicio);
+        };
+        renderServicio(currentServicio);
+        </script>
+        <section id="sobre" class="sobre">
+            <div class="container">
+                <h2>Sobre Nosotros</h2>
+                <p>Yajasa Technology fundada en el año 2020, conformada por un equipo de profesionales altamente preparados en las áreas de telecomunicaciones, ingeniería integral y logística, dispuestos a ofrecer una visión global para el tratamiento de sus necesidades.<br><br>
+                Nuestro enfoque es lograr la satisfacción de nuestros clientes brindándoles el mejor servicio.</p>
+            </div>
+        </section>
+        <section id="valores" class="valores">
+            <div class="container">
+                <h2>Nuestros Valores</h2>
+                <ul>
+                    <li>Responder y actuar con agilidad.</li>
+                    <li>Garantizar transparencia en cada proceso.</li>
+                    <li>Asumir la responsabilidad de cada servicio prestado.</li>
+                    <li>Respeto y trabajo en equipo.</li>
+                    <li>Mantener una sobresaliente línea de seguridad y táctica operacional.</li>
+                </ul>
+            </div>
+        </section>
+
+let currentServicio = 0;
+const slide = document.getElementById('servicio-slide');
+function renderServicio(idx) {
+  slide.innerHTML = `<div class="servicio-item"><h3>${servicios[idx].titulo}</h3><p>${servicios[idx].descripcion}</p></div>`;
+}
+document.getElementById('prev-servicio').onclick = () => {
+  currentServicio = (currentServicio - 1 + servicios.length) % servicios.length;
+  renderServicio(currentServicio);
+};
+document.getElementById('next-servicio').onclick = () => {
+  currentServicio = (currentServicio + 1) % servicios.length;
+  renderServicio(currentServicio);
+};
+renderServicio(currentServicio);
+</script>
+        <section id="clientes" class="clientes">
+            <div class="container">
+                <h2>Clientes</h2>
+                <p>Nuestra empresa ofrece a nuestros clientes servicios integrales que garantizan tranquilidad en sus procesos mineros e industriales.</p>
+                <div class="clientes-lista">
+                    <span>Gobierno de Chile</span> |
+                    <span>Ilustre Municipalidad de Mejillones</span> |
+                    <span>Holcim</span> |
+                    <span>Derk</span> |
+                    <span>Schwager</span>
+                </div>
+            </div>
+        </section>
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p><b>Dirección:</b> Uribe 636 of 707, Centro de Negocios, Antofagasta, Región Antofagasta</p>
+                <p><b>Cel:</b> +56 9 4290 2598</p>
+                <p><b>Correo:</b> yajasa.technology@gmail.com</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            &copy; 2025 Yajasa Technology. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
