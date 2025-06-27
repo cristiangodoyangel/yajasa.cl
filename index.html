@@ -7,29 +7,86 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container header-flex">
-            <img src="assets/yajasa-logo.png" alt="Yajasa Technology Logo" class="logo">
-            <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre">Sobre Nosotros</a>
-                <a href="#valores">Valores</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#clientes">Clientes</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-        </div>
-    </header>
-    <main>
-
-        <section id="inicio" class="hero">
-            <div class="container">
-                <h1>Yajasa Technology</h1>
-                <p class="slogan">"TRABAJO EN EQUIPO, SEGURIDAD Y LIDERAZGO"</p>
+    <div class="container">
+        <header>
+            <div class="header-flex">
+                <img src="assets/yajasa-logo.png" alt="Yajasa Technology Logo" class="logo">
+                <nav>
+                    <a href="#inicio">INICIO</a> -
+                    <a href="#servicios">SERVICIOS</a> -
+                    <a href="#sobre">NOSOTROS</a> -
+                    <a href="#contacto">CONTACTO</a>
+                </nav>
             </div>
-        </section>
-        <section id="servicios" class="servicios">
-            <div class="container">
+        </header>
+        <main>
+
+            <section id="inicio" class="hero"></section>
+            <section id="servicios" class="servicios">
+                <h2>Nuestros Servicios</h2>
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <img src="assets/plataformaelevadora.jpg" alt="Plataforma elevadora">
+                        <h3>Arriendo de Plataformas</h3>
+                        <ul>
+                            <li>Plataforma elevadora</li>
+                            <li>Plataforma de Tijera</li>
+                            <li>Plataforma alza hombre</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-card">
+                        <img src="assets/camionetasmineras.jpg" alt="Camionetas y minibuses">
+                        <h3>Arriendo de Camionetas y Minibuses</h3>
+                        <ul>
+                            <li>Estándar minero</li>
+                            <li>Certificadas para minería</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-card">
+                        <img src="assets/generadores.jpg" alt="Generadores">
+                        <h3>Arriendo de Generadores</h3>
+                        <ul>
+                            <li>Generador 7KVA</li>
+                            <li>Generador 18 KVA</li>
+                            <li>Generador 35 KVA</li>
+                            <li>Generador 63 KVA</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-card">
+                        <img src="assets/torresdeiluminacion.jpg" alt="Torre de Iluminación">
+                        <h3>Arriendo de Torre de Iluminación</h3>
+                        <ul>
+                            <li>LTM9 JCB</li>
+                            <li>Fenix</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-card">
+                        <img src="assets/gruahorquilla.jpg" alt="Grúa Horquilla">
+                        <h3>Arriendo de Grúa Horquilla</h3>
+                        <ul>
+                            <li>Grúa Horquilla 3 Toneladas</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-card">
+                        <img src="assets/aseoindustrial.jpg" alt="Aseo industrial">
+                        <h3>Servicio de Aseo Industrial Integral</h3>
+                        <ul>
+                          <li>Aseo Industrial</li>
+                          <li>Planta de Aseo Industrial</li>
+                      </ul>
+                    </div>
+                    <div class="servicio-card">
+                        <img src="assets/cascos.jpg" alt="Cascos Inteligentes">
+                        <h3>Venta de Cascos Inteligentes Automatizados</h3>
+                       
+                        <ul>
+                            <li>Intercomunicador industrial</li>
+                            <li>Intercomunicador digital industrial</li>
+                        </ul>
+                        
+                </div>
+            </section>
+            <section id="servicios" class="servicios">
                 <h2>Nuestros Servicios</h2>
                 <div class="carrusel-servicios">
                     <button class="carrusel-btn" id="prev-servicio" aria-label="Anterior">&#8592;</button>
@@ -78,63 +135,7 @@
         };
         renderServicio(currentServicio);
         </script>
-        <section id="sobre" class="sobre">
-            <div class="container">
-                <h2>Sobre Nosotros</h2>
-                <p>Yajasa Technology fundada en el año 2020, conformada por un equipo de profesionales altamente preparados en las áreas de telecomunicaciones, ingeniería integral y logística, dispuestos a ofrecer una visión global para el tratamiento de sus necesidades.<br><br>
-                Nuestro enfoque es lograr la satisfacción de nuestros clientes brindándoles el mejor servicio.</p>
-            </div>
-        </section>
-        <section id="valores" class="valores">
-            <div class="container">
-                <h2>Nuestros Valores</h2>
-                <ul>
-                    <li>Responder y actuar con agilidad.</li>
-                    <li>Garantizar transparencia en cada proceso.</li>
-                    <li>Asumir la responsabilidad de cada servicio prestado.</li>
-                    <li>Respeto y trabajo en equipo.</li>
-                    <li>Mantener una sobresaliente línea de seguridad y táctica operacional.</li>
-                </ul>
-            </div>
-        </section>
 
-let currentServicio = 0;
-const slide = document.getElementById('servicio-slide');
-function renderServicio(idx) {
-  slide.innerHTML = `<div class="servicio-item"><h3>${servicios[idx].titulo}</h3><p>${servicios[idx].descripcion}</p></div>`;
-}
-document.getElementById('prev-servicio').onclick = () => {
-  currentServicio = (currentServicio - 1 + servicios.length) % servicios.length;
-  renderServicio(currentServicio);
-};
-document.getElementById('next-servicio').onclick = () => {
-  currentServicio = (currentServicio + 1) % servicios.length;
-  renderServicio(currentServicio);
-};
-renderServicio(currentServicio);
-</script>
-        <section id="clientes" class="clientes">
-            <div class="container">
-                <h2>Clientes</h2>
-                <p>Nuestra empresa ofrece a nuestros clientes servicios integrales que garantizan tranquilidad en sus procesos mineros e industriales.</p>
-                <div class="clientes-lista">
-                    <span>Gobierno de Chile</span> |
-                    <span>Ilustre Municipalidad de Mejillones</span> |
-                    <span>Holcim</span> |
-                    <span>Derk</span> |
-                    <span>Schwager</span>
-                </div>
-            </div>
-        </section>
-        <section id="contacto" class="contacto">
-            <div class="container">
-                <h2>Contacto</h2>
-                <p><b>Dirección:</b> Uribe 636 of 707, Centro de Negocios, Antofagasta, Región Antofagasta</p>
-                <p><b>Cel:</b> +56 9 4290 2598</p>
-                <p><b>Correo:</b> yajasa.technology@gmail.com</p>
-            </div>
-        </section>
-    </main>
     <footer>
         <div class="container">
             &copy; 2025 Yajasa Technology. Todos los derechos reservados.
